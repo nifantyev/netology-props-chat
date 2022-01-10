@@ -215,3 +215,39 @@ body {
   clear: both;
   height: 0;
 }
+
+.typing-indicator span {
+  height: 10px;
+  width: 10px;
+  float: left;
+  margin: 0 1px;
+  background-color: #86BB71;
+  display: block;
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+
+.typing-indicator span:nth-child(1)
+{
+  animation: 1s blink infinite .3333s;
+}
+
+.typing-indicator span:nth-child(2)
+{
+  animation: 1s blink infinite .6666s;
+}
+
+.typing-indicator span:nth-child(3)
+{
+  animation: 1s blink infinite .9999s;
+}
+
+
+@keyframes blink
+{
+  50%
+  {
+      opacity: 1;
+  }
+}
