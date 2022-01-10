@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import 'font-awesome/css/font-awesome.css';
 import './App.css';
+import Message from './components/Message';
 
 function App() {
+  const message = {
+    id: 'chat-5-1090',
+    from: { name: 'Ольга' },
+    type: 'response',
+    time: '10:10',
+    text: 'Привет, Виктор. Как дела? Как идет работа над проектом?',
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="chat">
+      <div className="chat-history">
+        <ul>
+          <Message from={message.from} message={message} />
+        </ul>
+      </div>
     </div>
   );
 }
