@@ -1,38 +1,51 @@
 import 'font-awesome/css/font-awesome.css';
 import './App.css';
-import Message from './components/Message';
-import Response from './components/Response';
-import Typing from './components/Typing';
+import MessageHistory from './components/MessageHistory';
 
 function App() {
-  const message = {
-    id: 'chat-5-1090',
-    from: { name: 'Ольга' },
-    type: 'response',
-    time: '10:10',
-    text: 'Привет, Виктор. Как дела? Как идет работа над проектом?',
-  };
-  const response = {
-    id: 'chat-5-1091',
-    from: { name: 'Виктор' },
-    type: 'message',
-    time: '10:12',
-    text: 'Привет. Давай сегодня созвонимся. Проект практически готов, и у меня есть что показать.',
-  };
-  const typing = {
-    id: 'chat-5-1094',
-    from: { name: 'Виктор' },
-    type: 'typing',
-    time: '10:31',
-  };
+  const messages = [
+    {
+      id: 'chat-5-1090',
+      from: { name: 'Ольга' },
+      type: 'response',
+      time: '10:10',
+      text: 'Привет, Виктор. Как дела? Как идет работа над проектом?',
+    },
+    {
+      id: 'chat-5-1091',
+      from: { name: 'Виктор' },
+      type: 'message',
+      time: '10:12',
+      text: 'Привет. Давай сегодня созвонимся. Проект практически готов, и у меня есть что показать.',
+    },
+    {
+      id: 'chat-5-1092',
+      from: { name: 'Ольга' },
+      type: 'response',
+      time: '10:14',
+      text: 'Не уверена что сегодня получится. Не все еще в офисе. Давай уточню через час. Возникли ли какие-либо проблемы на последней стадии проекта?',
+    },
+    {
+      id: 'chat-5-1093',
+      from: { name: 'Виктор' },
+      type: 'message',
+      time: '10:20',
+      text: 'Нет, все прошло гладко. Очень хочу показать всё команде.',
+    },
+    {
+      id: 'chat-5-1094',
+      from: { name: 'Виктор' },
+      type: 'typing',
+      time: '10:31',
+    },
+  ];
+
   return (
-    <div className="chat">
-      <div className="chat-history">
-        <ul>
-          <Message from={message.from} message={message} />
-          <Response from={response.from} message={response} />
-          <Typing from={typing.from} message={typing} />
-        </ul>
+    <div className="clearfix container">
+      <div className="chat">
+        <div className="chat-history">
+          <MessageHistory list={messages} />
+        </div>
       </div>
     </div>
   );
